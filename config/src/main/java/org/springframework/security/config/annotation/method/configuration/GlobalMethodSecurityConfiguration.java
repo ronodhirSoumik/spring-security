@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2024 the original author or authors.
+ * Copyright 2002-2025 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -405,25 +405,6 @@ public class GlobalMethodSecurityConfiguration implements ImportAware, SmartInit
 	@Autowired(required = false)
 	public void setObjectPostProcessor(ObjectPostProcessor<Object> objectPostProcessor) {
 		this.objectPostProcessor = objectPostProcessor;
-	}
-
-	/**
-	 * @deprecated
-	 */
-	@Deprecated(since = "6.4", forRemoval = true)
-	@Autowired(required = false)
-	public void setObjectPostProcessor(
-			org.springframework.security.config.annotation.ObjectPostProcessor<Object> objectPostProcessor) {
-		this.objectPostProcessor = objectPostProcessor;
-	}
-
-	@Autowired(required = false)
-	public void setMethodSecurityExpressionHandler(List<MethodSecurityExpressionHandler> handlers) {
-		if (handlers.size() != 1) {
-			logger.debug("Not autowiring MethodSecurityExpressionHandler since size != 1. Got " + handlers);
-			return;
-		}
-		this.expressionHandler = handlers.get(0);
 	}
 
 	@Autowired(required = false)
