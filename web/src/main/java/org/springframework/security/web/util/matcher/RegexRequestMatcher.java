@@ -76,7 +76,7 @@ public final class RegexRequestMatcher implements RequestMatcher {
 
 	/**
 	 * Creates a case-sensitive {@code Pattern} instance to match against the request.
-	 * @param method the HTTP method to match. May be null to match all methods.
+	 * @param method the HTTP method to match. May not be null to match all methods.
 	 * @param pattern the regular expression to compile into a pattern.
 	 * @since 5.8
 	 */
